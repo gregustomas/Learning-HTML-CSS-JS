@@ -7,8 +7,8 @@
     --dark: ;
 
     /* fonty */
-    --heading: bold max(48px, 4vw) / max(56px, 4vw) 'Manrope', sans-serif;
-    --subheading: bold max(32px, 3vw) / max(40px, 4vw) 'Manrope', sans-serif;
+    --heading: bold max(48px, 3vw) / max(50px, 3vw) 'Manrope', sans-serif;
+    --subheading: bold max(32px, 2vw) / max(40px, 2vw) 'Manrope', sans-serif;
     --label: 600 14px / 20px 'Manrope', sans-serif;
     --text: 500 14px / 20px 'Manrope', sans-serif;
 
@@ -196,5 +196,63 @@ section{
 @media (min-width: 744px){
     .hero .text-container{
     width: 750px;
+    }
+}
+
+/* kickstart */
+
+.kickstart{
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp5);
+    max-width: 1440px;
+    margin: auto;
+}
+
+.kickstart .text-container{
+    max-width: 650px;
+}
+
+.kickstart .features{
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp4);
+}
+
+.kickstart .feature{
+    width: 100%;
+    background-color: #272727;
+    color: var(--light);
+    height: 400px;
+    display: flex;
+    align-items: end;
+    padding: 20px;
+    position: relative;
+    transition: background-size 0.5s ease;
+}
+
+.kickstart .feature:hover{
+    background-size: 120%;
+}
+ 
+.kickstart .powerlifting{
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./img/powerlifting.jpg);
+    background-size: 100%;
+    background-position: center;
+}
+
+.kickstart .bodybuilding{
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./img/bodybuilding.jpg);
+    background-size: 100%;
+    background-position: center;
+}
+
+.kickstart .feature h3{
+    max-width: 500px;
+}
+
+@media (min-width: 744px){
+    .kickstart .features{
+    flex-direction: row;
     }
 }
