@@ -1,14 +1,68 @@
-body{
-    margin: 0;
-    font-size: 16px;
-    font-family: Manrope, sans-serif;
+:root{
+    /* barvy */
+    --main: #911818; 
+    --secondary: ;
+    --accent: #272727;
+    --light: #f7f0f0;
+    --dark: ;
+
+    /* fonty */
+    --heading: bold max(48px, 4vw) / max(56px, 4vw) 'Manrope', sans-serif;
+    --subheading: bold max(32px, 3vw) / max(40px, 4vw) 'Manrope', sans-serif;
+    --label: 600 14px / 20px 'Manrope', sans-serif;
+    --text: 500 14px / 20px 'Manrope', sans-serif;
+
+    /* spacing */
+    --sp1: 4px;
+    --sp2: 8px;
+    --sp3: 16px;
+    --sp4: 20px;
+    --sp5: 40px;
+    --sp6: 80px;
+    --sp7: 160px
 }
 
-h1, h2{
-    font-size: 32px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Manrope', sans-serif;
+}
+
+h1, h2{ font: var(--heading); margin-bottom: var(--sp3); }
+h3{ font: var(--subheading); margin-bottom: var(--sp3); }
+h4{ font: var(--label); margin-bottom: var(--sp1); text-transform: uppercase; }
+p{ font: var(--text); } 
+
+a{
+    text-decoration: none;
+    color: unset;
+    display: inline-block;
+}
+
+section{
+    padding: 60px 20px;
+}
+
+@media (min-width: 744px){
+    section{
+    padding: 100px 20px;
+}
+}
+
+
+.cta{
     font-weight: 600;
+    background-color: var(--accent);
+    color: var(--light);
+    padding: 16px 32px;
+    transition: 0.5s;
+    width: fit-content;
 }
 
+.cta:hover{
+    background-color: var(--main);
+}
 
 /* navbar */
 
@@ -20,8 +74,8 @@ h1, h2{
     height: 80px;
     position: fixed;
     top: 0;
-    background-color: #fff;
-    border: 2px solid;
+    background-color: #ffffffbb;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.025);
     z-index: 999;
 }
 
@@ -31,6 +85,7 @@ h1, h2{
     align-items: center;
     width: 100%;
     padding: 0 2rem;
+    max-width: 1440px;
 }
 
 .logo img, .nav-toggle img{
@@ -109,5 +164,37 @@ h1, h2{
     width: 100%;
     border: none;
     padding: 0;
+    }
+}
+
+/* hero */
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: end;
+    align-items: center;
+    gap: var(--sp6);
+    justify-content: end;
+    height: 90vh;
+    background: url(./img/gym.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.hero .text-container{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    text-align: center;
+    align-items: center;
+    backdrop-filter: blur(8px);
+    padding: 20px;
+}
+
+@media (min-width: 744px){
+    .hero .text-container{
+    width: 750px;
     }
 }
